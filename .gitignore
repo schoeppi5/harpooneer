@@ -1,0 +1,5 @@
+# Ignore build binaries
+harpooneer
+
+# Ignore config file
+harpooneer.yaml
