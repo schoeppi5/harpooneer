@@ -13,6 +13,7 @@ func NewLogrus(level logrus.Level, stdout io.Writer, stderr io.Writer, file io.W
 	if level == logrus.DebugLevel {
 		logger.SetReportCaller(true)
 	}
+	logger.Level = level
 
 	// All logs should go to a file
 	logger.SetOutput(file)
