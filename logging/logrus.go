@@ -10,7 +10,9 @@ import (
 // NewLogrus returns a properly configured logrus logger fullfilling the Logger interface
 func NewLogrus(level logrus.Level, stdout io.Writer, stderr io.Writer, file io.Writer) *logrus.Logger {
 	logger := logrus.New()
-	logger.SetReportCaller(true)
+	if level == logrus.DebugLevel {
+		logger.SetReportCaller(true)
+	}
 
 	// All logs should go to a file
 	logger.SetOutput(file)
